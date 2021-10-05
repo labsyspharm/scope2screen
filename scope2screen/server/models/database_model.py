@@ -1,4 +1,4 @@
-from minerva_analysis import app, db
+from scope2screen import app, db
 from sqlalchemy.orm import relationship
 
 import io

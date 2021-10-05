@@ -24,7 +24,7 @@ if getattr(sys, 'frozen', False):
     data_path = Path(os.path.dirname(sys.executable) + '/data')
     multiprocessing.freeze_support()
 else:
-    data_path = Path("minerva_analysis/data")
+    data_path = Path("scope2screen/data")
 
 config_json_path = data_path / "config.json"
 db = SQLAlchemy(app)
@@ -52,5 +52,5 @@ def get_config_names():
         return []
 
 
-from minerva_analysis.server.routes import page_routes, data_routes, import_routes
-from minerva_analysis.server.models import data_model, database_model
+from scope2screen.server.routes import page_routes, data_routes, import_routes
+from scope2screen.server.models import data_model, database_model

@@ -31,7 +31,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Node and Webpack
         run: |
-          cd minerva_analysis
+          cd scope2screen
           cd client
           npm ci
           npm run start
@@ -41,7 +41,7 @@ jobs:
         with:
           python-version: 3.7
           environment-file: requirements.yml
-          activate-environment: minerva_analysis
+          activate-environment: scope2screen
       - name: Package Windows
         if: startsWith(matrix.os,'windows')
         shell: cmd /C CALL {0}
@@ -52,7 +52,7 @@ jobs:
         shell: bash -l {0}
         run: |
           ls dist/
-          mv dist/minerva_analysis_windows.exe "dist/minerva_analysis_windows_${{ env.BRANCH }}.exe"
+          mv dist/scope2screen_windows.exe "dist/scope2screen_windows_${{ env.BRANCH }}.exe"
           ls dist/
       - name: Package Mac
         if: startsWith(matrix.os,'mac')
@@ -63,10 +63,10 @@ jobs:
         if: startsWith(matrix.os,'mac')
         shell: bash -l {0}
         run: |
-          mv dist/minerva_analysis_mac "dist/minerva_analysis_mac_${{ env.BRANCH }}"
+          mv dist/scope2screen_mac "dist/scope2screen_mac_${{ env.BRANCH }}"
           cd dist
-          zip "minerva_analysis_mac_${{ env.BRANCH }}.zip" "minerva_analysis_mac_${{ env.BRANCH }}"
-          rm "minerva_analysis_mac_${{ env.BRANCH }}"
+          zip "scope2screen_mac_${{ env.BRANCH }}.zip" "scope2screen_mac_${{ env.BRANCH }}"
+          rm "scope2screen_mac_${{ env.BRANCH }}"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')

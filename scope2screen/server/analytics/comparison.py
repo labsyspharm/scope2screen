@@ -1,4 +1,4 @@
-from minerva_analysis.server.models import data_model
+from scope2screen.server.models import data_model
 import numpy as np
 import scipy.misc as sp
 import time
@@ -18,7 +18,7 @@ from skimage import measure
 import cv2
 
 
-from minerva_analysis import data_path
+from scope2screen import data_path
 
 def prepSlidingWindow():
     print('hi')
@@ -43,8 +43,8 @@ def histogramComparison(x, y, datasource_name, r, channels, viewport, zoomlevel,
     print("cropped sections loaded after " + str(tac-tic))
 
     #write those sections to file for debugging purposes
-    # cv2.imwrite('minerva_analysis/server/analytics/img/testcut.png', png)
-    # cv2.imwrite('minerva_analysis/server/analytics/img/roi.png', roi)
+    # cv2.imwrite('scope2screen/server/analytics/img/testcut.png', png)
+    # cv2.imwrite('scope2screen/server/analytics/img/roi.png', roi)
 
     # calc image similarity map
     print("calculate image similarity maps for each channel...")
@@ -61,7 +61,7 @@ def histogramComparison(x, y, datasource_name, r, channels, viewport, zoomlevel,
             combined_png = np.add(combined_png, png[i])
             combined_roi = np.add(combined_roi, roi[i])
         i += 1
-    # cv2.imwrite('minerva_analysis/server/analytics/img/sim_map.jpg', sim_map)
+    # cv2.imwrite('scope2screen/server/analytics/img/sim_map.jpg', sim_map)
 
     # normalize by num channels considered
     print("combining whole channels, combine lens parts. Norm by num channels")
@@ -111,8 +111,8 @@ def histogramComparisonSimMap(x, y, datasource_name, r, channels, viewport, zoom
         print("cropped sections loaded after " + str(tac - tic))
 
         # write those sections to file for debugging purposes
-        # cv2.imwrite('minerva_analysis/server/analytics/img/testcut.png', png)
-        # cv2.imwrite('minerva_analysis/server/analytics/img/roi.png', roi)
+        # cv2.imwrite('scope2screen/server/analytics/img/testcut.png', png)
+        # cv2.imwrite('scope2screen/server/analytics/img/roi.png', roi)
 
         # calc image similarity map
         print("calculate image similarity maps for each channel...")
@@ -129,7 +129,7 @@ def histogramComparisonSimMap(x, y, datasource_name, r, channels, viewport, zoom
                 combined_png = np.add(combined_png, png[i])
                 combined_roi = np.add(combined_roi, roi[i])
             i += 1
-        # cv2.imwrite('minerva_analysis/server/analytics/img/sim_map.jpg', sim_map)
+        # cv2.imwrite('scope2screen/server/analytics/img/sim_map.jpg', sim_map)
 
         # normalize by num channels considered
         print("combining whole channels, combine lens parts. Norm by num channels")
@@ -152,9 +152,9 @@ def histogramComparisonSimMap(x, y, datasource_name, r, channels, viewport, zoom
                                          data_model.channels[min(zoomlevel+1, len(data_model.channels)-1)].shape[length - 2],
                                          data_model.channels[min(zoomlevel+1, len(data_model.channels)-1)].shape[length - 1],
                                          viewport)
-        cv2.imwrite('minerva_analysis/server/analytics/img/sim_map_strange.jpg', combined_sim_map)
+        cv2.imwrite('scope2screen/server/analytics/img/sim_map_strange.jpg', combined_sim_map)
         mask = imageToWorldCoordinates(combined_sim_map, viewport, layerviewport)
-        # cv2.imwrite('minerva_analysis/server/analytics/img/sim_map_strange_after.jpg', mask)
+        # cv2.imwrite('scope2screen/server/analytics/img/sim_map_strange_after.jpg', mask)
         toc = time.perf_counter()
 
         print("histogram computation time is" + str(toc - tic))
@@ -180,8 +180,8 @@ def scale(im, nR, nC):
     #     roi.append(loadPngSection(datasource_name, channel, zoomlevel, np.array([x-r,y-r,x+r,y+r]).astype(int)))
     #
     # #write those sections to file for debugging purposes
-    # # cv2.imwrite('minerva_analysis/server/analytics/img/testcut.png', png)
-    # # cv2.imwrite('minerva_analysis/server/analytics/img/roi.png', roi)
+    # # cv2.imwrite('scope2screen/server/analytics/img/testcut.png', png)
+    # # cv2.imwrite('scope2screen/server/analytics/img/roi.png', roi)
     #
     # # calc image similarity map
     # print("calculate image similarity maps for each channel...")
@@ -196,7 +196,7 @@ def scale(im, nR, nC):
     #     if (i > 0):
     #         combined_sim_map = np.add(combined_sim_map, sim_map[i])
     #     i += 1
-    # # cv2.imwrite('minerva_analysis/server/analytics/img/sim_map.jpg', sim_map)
+    # # cv2.imwrite('scope2screen/server/analytics/img/sim_map.jpg', sim_map)
     #
     # # normalize by num channels considered
     # print("combining sim maps")
@@ -316,7 +316,7 @@ def find_contours(sim_map, eta):
     contours = measure.find_contours(sim_map, eta, fully_connected='high')
 
     # print(data_path)
-    # f = open('minerva_analysis/server/analytics/measures/centers.txt', 'w')
+    # f = open('scope2screen/server/analytics/measures/centers.txt', 'w')
     # f.write('x,y\n')
     # for contour in contours:
     #     # calculate centers
@@ -366,8 +366,8 @@ def windowed_histogram_similarity(image, selem, reference_hist, n_bins):
 def calc_sim(img, coin):
 
 
-    # cv2.imwrite('minerva_analysis/server/analytics/img/testcut.png', img)
-    # img = cv2.imread('minerva_analysis/server/analytics/img/testcut.png');
+    # cv2.imwrite('scope2screen/server/analytics/img/testcut.png', img)
+    # img = cv2.imread('scope2screen/server/analytics/img/testcut.png');
     print('prepare image')
     # img = np.stack((img,) * 3, axis=-1)
     # if img.shape[-1] == 3:
@@ -375,8 +375,8 @@ def calc_sim(img, coin):
     # img = img.astype('uint8')
     img = img_as_ubyte(img)
 
-    # cv2.imwrite('minerva_analysis/server/analytics/img/coin.png', coin)
-    # coin = cv2.imread('minerva_analysis/server/analytics/img/coin.png');
+    # cv2.imwrite('scope2screen/server/analytics/img/coin.png', coin)
+    # coin = cv2.imread('scope2screen/server/analytics/img/coin.png');
     print('prepare coin')
     # coin = np.stack((coin,) * 3, axis=-1)
     # if coin.shape[-1]==3:

@@ -1,4 +1,4 @@
-from minerva_analysis.server.models import data_model
+from scope2screen.server.models import data_model
 import numpy as np
 import scipy.misc as sp
 import matplotlib

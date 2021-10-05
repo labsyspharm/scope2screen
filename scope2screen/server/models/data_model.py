@@ -6,9 +6,9 @@ import json
 import os
 from pathlib import Path
 from ome_types import from_xml
-from minerva_analysis import config_json_path, data_path
-from minerva_analysis.server.utils import pyramid_assemble
-from minerva_analysis.server.models import database_model
+from scope2screen import config_json_path, data_path
+from scope2screen.server.utils import pyramid_assemble
+from scope2screen.server.models import database_model
 import dateutil.parser
 import time
 import pickle
@@ -74,7 +74,7 @@ def load_config(datasource_name):
         updated = False
         # Update Feature SRC
         original = config[datasource_name]['featureData'][0]['src']
-        config[datasource_name]['featureData'][0]['src'] = original.replace('static/data', 'minerva_analysis/data')
+        config[datasource_name]['featureData'][0]['src'] = original.replace('static/data', 'scope2screen/data')
         csvPath = config[datasource_name]['featureData'][0]['src']
         if Path(csvPath).exists() is False:
             if Path('.' + csvPath).exists():
@@ -84,7 +84,7 @@ def load_config(datasource_name):
             updated = True
         try:
             original = config[datasource_name]['segmentation']
-            config[datasource_name]['segmentation'] = original.replace('static/data', 'minerva_analysis/data')
+            config[datasource_name]['segmentation'] = original.replace('static/data', 'scope2screen/data')
             if original != config[datasource_name]['segmentation']:
                 updated = True
 

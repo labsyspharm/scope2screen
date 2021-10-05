@@ -1,8 +1,8 @@
 # CRUD for Datasources
 
-from minerva_analysis import app, get_config_names, config_json_path, data_path
-from minerva_analysis.server.utils import mostFrequentLongestSubstring, pre_normalization
-from minerva_analysis.server.models import data_model
+from scope2screen import app, get_config_names, config_json_path, data_path
+from scope2screen.server.utils import mostFrequentLongestSubstring, pre_normalization
+from scope2screen.server.models import data_model
 
 from flask import render_template, request, Response, jsonify
 from pathlib import Path

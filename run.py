@@ -1,5 +1,5 @@
 from waitress import serve
-from minerva_analysis import app
+from scope2screen import app
 import multiprocessing
 import sys
 

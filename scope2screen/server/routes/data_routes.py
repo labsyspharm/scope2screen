@@ -1,10 +1,10 @@
-from minerva_analysis import app
+from scope2screen import app
 from flask import render_template, request, Response, jsonify, abort, send_file
 import io
 from PIL import Image
-from minerva_analysis import data_path, get_config
-from minerva_analysis.server.models import data_model
-from minerva_analysis.server.analytics import comparison
+from scope2screen import data_path, get_config
+from scope2screen.server.models import data_model
+from scope2screen.server.analytics import comparison
 from pathlib import Path
 from time import time
 import pandas as pd
