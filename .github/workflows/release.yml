@@ -12,15 +12,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Get Branch
-        shell: bash -l {0}
-        run: |
-          raw=$(git branch -r --contains ${{ github.ref }})
-          branch=${raw##*/}
-          echo "BRANCH=$branch" >> $GITHUB_ENV
-      - run: echo ${{ env.BRANCH }}
       - name: Creating Private Key
         uses: webfactory/ssh-agent@v0.5.3
         with:
@@ -47,31 +38,18 @@ jobs:
         shell: cmd /C CALL {0}
         run: |
           package_win.bat
-      - name: Rename Windows
-        if: startsWith(matrix.os,'windows')
-        shell: bash -l {0}
-        run: |
-          ls dist/
-          mv dist/scope2screen_windows.exe "dist/scope2screen_windows_${{ env.BRANCH }}.exe"
-          ls dist/
       - name: Package Mac
         if: startsWith(matrix.os,'mac')
         shell: bash -l {0}
         run: |
           ./package_mac.sh
-      - name: Rename Mac
-        if: startsWith(matrix.os,'mac')
-        shell: bash -l {0}
-        run: |
-          mv dist/scope2screen_mac "dist/scope2screen_mac_${{ env.BRANCH }}"
-          cd dist
-          zip "scope2screen_mac_${{ env.BRANCH }}.zip" "scope2screen_mac_${{ env.BRANCH }}"
-          rm "scope2screen_mac_${{ env.BRANCH }}"
+          zip scope2screen_mac.zip dist/scope2screen_mac
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            dist/*
+            dist/scope2screen_windows.exe
+            scope2screen_mac.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
