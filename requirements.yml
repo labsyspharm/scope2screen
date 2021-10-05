@@ -1,4 +1,4 @@
-name: viewer
+name: scope2screen
 channels:
   - conda-forge
 dependencies:
