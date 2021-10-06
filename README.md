@@ -2,11 +2,6 @@
 
 Scope2Screen is an open-source web-application for focus+context exploration and annotation of whole-slide, high-plex, tissue images. The client -server application consists of a python [Flask](http://flask.pocoo.org/) backend and a [Node.js](https://nodejs.org/en/) javascript frontend. The server’s  restful  API  allows  to  retrieve  image  and  feature  data and to steer analytics.  The frontend is built using Bootstrap, D3.js, and [openseadragon](https://openseadragon.github.io/), a web-based zoomable imageviewer, which we extend significantly. Take a look at our [Wiki](https://github.com/labsyspharm/scope2screen/wiki) to find out more.
 
-The implementation is supplemental material to the publication:
-
-Jessup J, Krueger R, Warchol S, Hoffer J, Muhlich J, Ritch CC, Gaglia G, Coy S, Chen YA, Lin JR, Santagata S, Sorger PK, Pfister H. Scope2Screen: Focus+Context Techniques for Pathology Tumor Assessment in Multivariate Image Data. IEEE Transaction on Visualization and Computer Graphics. 2021 Oct 4; doi: 10.1109/TVCG.2021.3114786. Epub ahead of print. PMID: 34606456
-
-
 ## Executables (for Users)
 Releases can be found here:
 https://github.com/labsyspharm/scope2screen/releases
