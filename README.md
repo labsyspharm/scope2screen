@@ -46,4 +46,5 @@ This tool prototype is part of the publication:
 Jared Jessup+*, Robert Krueger+*, Simon Warchol*, John Hoffer*, Jeremy Muhlich*, Cecily C. Ritch, Giorgio Gaglia, Shannon Coy, Yu-An Chen, Jia-Ren Lin, Sandro Santagata, Peter K. Sorger, Hanspeter Pfister, "Scope2Screen: Focus+Context Techniques for Pathology Tumor Assessment in Multivariate Image Data," in IEEE Transactions on Visualization and Computer Graphics, doi: 10.1109/TVCG.2021.3114786.
 
 \+ contributed equally to this work
+
 \* have contributed code to the project
