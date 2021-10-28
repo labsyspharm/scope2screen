@@ -184,9 +184,10 @@ export class LfCellTypeAll {
                                 this.vars.cellCount = darr.length;
                                 this.vars.cellTypeMap.forEach((value, key, map) => map.set(key, 0));
                                 let cellTypeCounts = this.vars.cellTypeMap;
-                                darr.forEach(function (d, i) {
-                                    if (d[_this.vars.cellTypeColumnName] != null) {
-                                        let fieldName = d[_this.vars.cellTypeColumnName] + '-' + dataLayer.getNameForPhenotypeId(d[_this.vars.cellTypeColumnName]);
+                                this.data.forEach(function (d, i) {
+                                    if (d.data[_this.vars.cellTypeColumnName] != null) {
+                                        let fieldName = d.data[_this.vars.cellTypeColumnName] + '-' +
+                                            dataLayer.getNameForPhenotypeId(d.data[_this.vars.cellTypeColumnName]);
                                         if (!cellTypeCounts.has(fieldName)) {
                                             cellTypeCounts.set(fieldName, 0);
                                         }
