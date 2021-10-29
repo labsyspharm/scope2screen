@@ -48,5 +48,5 @@ Jared Jessup+#, Robert Krueger+#, Simon Warchol#, John Hoffer#, Jeremy Muhlich#,
 <font size="1">\# have contributed code to the project</font>
 
 ## Data
-For trying out scope2Screen with an example dataset, go to
+To download an example dataset for Scope2Screen, go to
 https://www.synapse.org/#!Synapse:syn26304730/wiki/613130 and register as a synapse user.
