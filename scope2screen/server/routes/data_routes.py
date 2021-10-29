@@ -186,8 +186,13 @@ def get_rect_cells():
 @app.route('/get_ome_metadata', methods=['GET'])
 def get_ome_metadata():
     datasource = request.args.get('datasource')
-    resp = data_model.get_ome_metadata(datasource)
-    return serialize_and_submit_json(resp)
+    resp = data_model.get_ome_metadata(datasource).json()
+    # OME-Types handles jsonify itself, so skip the orjson conversion
+    response = app.response_class(
+        response=resp,
+        mimetype='application/json'
+    )
+    return response
 
 
 @app.route('/download_gating_csv', methods=['POST'])
@@ -249,6 +254,7 @@ def histogram_comparison():
     resp = comparison.histogramComparison(x, y, datasource, max_distance, channels, viewport, zoomlevel, sensitivity)
     return serialize_and_submit_json(resp)
 
+
 @app.route('/histogram_comparison_simmap', methods=['GET'])
 def histogram_comparison_simmap():
     x = float(request.args.get('point_x'))
@@ -265,14 +271,14 @@ def histogram_comparison_simmap():
         channels = request.args.get('channels').split()[0].split(',')
 
     # call functionality
-    resp = comparison.histogramComparisonSimMap(x, y, datasource, max_distance, channels, viewport, zoomlevel, sensitivity)
+    resp = comparison.histogramComparisonSimMap(x, y, datasource, max_distance, channels, viewport, zoomlevel,
+                                                sensitivity)
     # file_object = io.BytesIO()
     # # write PNG in file-object
     # Image.fromarray(png).save(file_object, 'PNG', compress_level=0)
     # # move to beginning of file so `send_file()` it will read from start
     # file_object.seek(0)
     return serialize_and_submit_json(resp)
-
 
 
 @app.route('/save_dot', methods=['POST'])
@@ -316,10 +322,12 @@ def generate_png(datasource, channel, level, tile):
     file_object.seek(0)
     return send_file(file_object, mimetype='image/PNG')
 
+
 @app.route('/start_spatial_correlation')
 def start_spatial_correlation():
     data_model.spatial_corr([])
     return 'hi'
+
 
 def serialize_and_submit_json(data):
     response = app.response_class(
