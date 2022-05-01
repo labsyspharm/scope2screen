@@ -25,7 +25,8 @@ These are executables for Windows and MacOS that can be run locally without any 
 ##### Start the Server
 
 * `python run.py` - Runs the webserver
-##### Start the Server
+
+##### Access the Server
 
 * Access the tool via `http://localhost:8000/`
 
