@@ -7,6 +7,19 @@ Releases can be found here:
 https://github.com/labsyspharm/scope2screen/releases
 These are executables for Windows and MacOS that can be run locally without any installations.
 
+## Running as a Docker container
+
+From the directory that contains your data files:
+
+`docker run --rm -v "$PWD":/data -p 8000:8000 labsyspharm/scope2screen:0.74`
+
+where
+* `--rm` cleans up the container after it finishes executing
+* `-v` mounts the "present working directory" (containing your data) to be `/data` inside the container
+* `-p` forwards the port 8000
+* `0.74` specifies the tool version (see [Releases](https://github.com/labsyspharm/scope2screen/releases))
+
+Once the container is running, go to `http://localhost:8000/` in your web browser.
 
 ## Clone and Run Codebase (for Developers)
 #### Checkout Project
