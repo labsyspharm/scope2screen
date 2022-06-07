@@ -13,7 +13,7 @@ jobs:
         id: cleantag
         run: |
           tag=$(echo ${{ github.event.release.tag_name }} | tr -d v)
-          echo "::set-output name=tag::${{ github.repository }}:${clean%"_scope2screen"}
+          echo "::set-output name=tag::${{ github.repository }}:${tag%"_scope2screen"}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
