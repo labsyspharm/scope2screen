@@ -1,0 +1,492 @@
+{
+    "Sardana": {
+        "shapes": "",
+        "activeChannel": "",
+        "featureData": [
+            {
+                "normalization": "none",
+                "celltypeData": "scope2screen/data/Sardana/cluster_names-crop-ij_subtracted_qc_certified-phenograph.csv",
+                "celltype": "cluster_phenograph",
+                "xCoordinate": "X_centroid",
+                "yCoordinate": "Y_centroid",
+                "idField": "CellID",
+                "src": "scope2screen/data/Sardana/crop-ij_subtracted_qc_certified-phenograph.csv"
+            }
+        ],
+        "height": 2000,
+        "width": 2000,
+        "maxLevel": 2,
+        "num_channels": 43,
+        "tileWidth": 1024,
+        "tileHeight": 1024,
+        "segmentation": "/Users/swarchol/Research/scope2screen/scope2screen/data/Sardana/crop-cellRingMask.tif",
+        "channelFile": "/Volumes/SIMON/sardana_cropped_sorted/crop-SARDANA-Coy-v9-12000_17000.ome.tif",
+        "imageData": [
+            {
+                "name": "Area",
+                "fullname": "Area",
+                "src": "/generated/data/Sardana/crop-cellRingMask/"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_0/",
+                "name": "Hoechst0",
+                "fullname": "Hoechst0"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_1/",
+                "name": "AF488",
+                "fullname": "AF488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_2/",
+                "name": "AF555",
+                "fullname": "AF555"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_3/",
+                "name": "AF647",
+                "fullname": "AF647"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_4/",
+                "name": "Hoechst1",
+                "fullname": "Hoechst1"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_5/",
+                "name": "A488",
+                "fullname": "A488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_6/",
+                "name": "A555",
+                "fullname": "A555"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_7/",
+                "name": "A647",
+                "fullname": "A647"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_8/",
+                "name": "Hoechst2",
+                "fullname": "Hoechst2"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_9/",
+                "name": "anti_CD3",
+                "fullname": "anti_CD3"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_10/",
+                "name": "anti_NaKATPase",
+                "fullname": "anti_NaKATPase"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_11/",
+                "name": "anti_CD45RO",
+                "fullname": "anti_CD45RO"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_12/",
+                "name": "Hoechst3",
+                "fullname": "Hoechst3"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_13/",
+                "name": "Ki67_488",
+                "fullname": "Ki67_488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_14/",
+                "name": "Keratin_570",
+                "fullname": "Keratin_570"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_15/",
+                "name": "aSMA_660",
+                "fullname": "aSMA_660"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_16/",
+                "name": "Hoechst4",
+                "fullname": "Hoechst4"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_17/",
+                "name": "CD4_488",
+                "fullname": "CD4_488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_18/",
+                "name": "CD45_PE",
+                "fullname": "CD45_PE"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_19/",
+                "name": "PD1_647",
+                "fullname": "PD1_647"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_20/",
+                "name": "Hoechst5",
+                "fullname": "Hoechst5"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_21/",
+                "name": "CD20_488",
+                "fullname": "CD20_488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_22/",
+                "name": "CD68_555",
+                "fullname": "CD68_555"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_23/",
+                "name": "CD8a_660",
+                "fullname": "CD8a_660"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_24/",
+                "name": "Hoechst6",
+                "fullname": "Hoechst6"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_25/",
+                "name": "CD163_488",
+                "fullname": "CD163_488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_26/",
+                "name": "FOXP3_570",
+                "fullname": "FOXP3_570"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_27/",
+                "name": "PDL1_647",
+                "fullname": "PDL1_647"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_28/",
+                "name": "Hoechst7",
+                "fullname": "Hoechst7"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_29/",
+                "name": "Ecad_488",
+                "fullname": "Ecad_488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_30/",
+                "name": "Vimentin_555",
+                "fullname": "Vimentin_555"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_31/",
+                "name": "CDX2_647",
+                "fullname": "CDX2_647"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_32/",
+                "name": "Hoechst8",
+                "fullname": "Hoechst8"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_33/",
+                "name": "LaminABC_488",
+                "fullname": "LaminABC_488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_34/",
+                "name": "Desmin_555",
+                "fullname": "Desmin_555"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_35/",
+                "name": "CD31_647",
+                "fullname": "CD31_647"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_36/",
+                "name": "Hoechst9",
+                "fullname": "Hoechst9"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_37/",
+                "name": "PCNA_488",
+                "fullname": "PCNA_488"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_38/",
+                "name": "Ki67_570",
+                "fullname": "Ki67_570"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_39/",
+                "name": "CollagenIV_647",
+                "fullname": "CollagenIV_647"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_40/",
+                "name": "HE_r",
+                "fullname": "HE_r"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_41/",
+                "name": "HE_g",
+                "fullname": "HE_g"
+            },
+            {
+                "src": "/generated/data/Sardana/crop-SARDANA-Coy-v9-12000_17000_42/",
+                "name": "HE_b",
+                "fullname": "HE_b"
+            }
+        ]
+    },
+    "Test": {
+        "shapes": "",
+        "activeChannel": "",
+        "featureData": [
+            {
+                "normalization": "none",
+                "celltypeData": "scope2screen/data/Test/crop-cluster-names-crc01-097-096.csv",
+                "celltype": "cluster_phenograph",
+                "xCoordinate": "X_centroid",
+                "yCoordinate": "Y_centroid",
+                "idField": "CellID",
+                "src": "scope2screen/data/Test/crop-quantification-crc01-097-096.csv"
+            }
+        ],
+        "height": 2000,
+        "width": 2000,
+        "maxLevel": 2,
+        "num_channels": 43,
+        "tileWidth": 1024,
+        "tileHeight": 1024,
+        "segmentation": "/Users/swarchol/Research/scope2screen/scope2screen/data/Test/crop-mask-crc01-097-096.tif",
+        "channelFile": "/Users/swarchol/Downloads/crop-crc01-097-096.ome.tif",
+        "imageData": [
+            {
+                "name": "Area",
+                "fullname": "Area",
+                "src": "/generated/data/Test/crop-mask-crc01-097-096/"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_0/",
+                "name": "Hoechst0",
+                "fullname": "Hoechst0"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_1/",
+                "name": "AF488",
+                "fullname": "AF488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_2/",
+                "name": "AF555",
+                "fullname": "AF555"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_3/",
+                "name": "AF647",
+                "fullname": "AF647"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_4/",
+                "name": "Hoechst1",
+                "fullname": "Hoechst1"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_5/",
+                "name": "AF488",
+                "fullname": "AF488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_6/",
+                "name": "A555",
+                "fullname": "A555"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_7/",
+                "name": "A647",
+                "fullname": "A647"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_8/",
+                "name": "Hoechst2",
+                "fullname": "Hoechst2"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_9/",
+                "name": "anti_CD3",
+                "fullname": "anti_CD3"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_10/",
+                "name": "anti_NaKATPase",
+                "fullname": "anti_NaKATPase"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_11/",
+                "name": "anti_CD45RO",
+                "fullname": "anti_CD45RO"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_12/",
+                "name": "Hoechst3",
+                "fullname": "Hoechst3"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_13/",
+                "name": "Ki67_488",
+                "fullname": "Ki67_488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_14/",
+                "name": "Keratin_570",
+                "fullname": "Keratin_570"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_15/",
+                "name": "aSMA_660",
+                "fullname": "aSMA_660"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_16/",
+                "name": "Hoechst4",
+                "fullname": "Hoechst4"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_17/",
+                "name": "CD4_488",
+                "fullname": "CD4_488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_18/",
+                "name": "CD45_PE",
+                "fullname": "CD45_PE"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_19/",
+                "name": "PD1_647",
+                "fullname": "PD1_647"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_20/",
+                "name": "Hoechst5",
+                "fullname": "Hoechst5"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_21/",
+                "name": "CD20_488",
+                "fullname": "CD20_488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_22/",
+                "name": "CD68_555",
+                "fullname": "CD68_555"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_23/",
+                "name": "CD8a_660",
+                "fullname": "CD8a_660"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_24/",
+                "name": "Hoechst6",
+                "fullname": "Hoechst6"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_25/",
+                "name": "CD163_488",
+                "fullname": "CD163_488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_26/",
+                "name": "FOXP3_570",
+                "fullname": "FOXP3_570"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_27/",
+                "name": "PDL1_647",
+                "fullname": "PDL1_647"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_28/",
+                "name": "Hoechst7",
+                "fullname": "Hoechst7"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_29/",
+                "name": "Ecad_488",
+                "fullname": "Ecad_488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_30/",
+                "name": "Vimentin_555",
+                "fullname": "Vimentin_555"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_31/",
+                "name": "CDX2_647",
+                "fullname": "CDX2_647"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_32/",
+                "name": "Hoechst8",
+                "fullname": "Hoechst8"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_33/",
+                "name": "LaminABC_488",
+                "fullname": "LaminABC_488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_34/",
+                "name": "Desmin_555",
+                "fullname": "Desmin_555"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_35/",
+                "name": "CD31_647",
+                "fullname": "CD31_647"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_36/",
+                "name": "Hoechst9",
+                "fullname": "Hoechst9"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_37/",
+                "name": "PCNA_488",
+                "fullname": "PCNA_488"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_38/",
+                "name": "Ki67_570",
+                "fullname": "Ki67_570"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_39/",
+                "name": "CollagenIV_647",
+                "fullname": "CollagenIV_647"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_40/",
+                "name": "HE_r",
+                "fullname": "HE_r"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_41/",
+                "name": "HE_g",
+                "fullname": "HE_g"
+            },
+            {
+                "src": "/generated/data/Test/crop-crc01-097-096_42/",
+                "name": "HE_b",
+                "fullname": "HE_b"
+            }
+        ]
+    }
+}

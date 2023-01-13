@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Node and Webpack
         run: |
-          cd scope2screen
+          cd minerva_analysis
           cd client
           npm ci
           npm run start
