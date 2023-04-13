@@ -1,22 +1,21 @@
-from sklearn.neighbors import BallTree
-import numpy as np
-import pandas as pd
-from PIL import ImageColor
 import json
 import os
-from pathlib import Path
-from ome_types import from_xml
-from minerva_analysis import config_json_path, data_path
-from minerva_analysis.server.utils import pyramid_assemble
-from minerva_analysis.server.models import database_model
-import dateutil.parser
-import time
 import pickle
-import tifffile as tf
 import re
+from pathlib import Path
+
+import dateutil.parser
+import numpy as np
+import pandas as pd
+import tifffile as tf
 import zarr
-from dask import dataframe as dd
-import cv2
+from PIL import ImageColor
+from ome_types import from_xml
+from sklearn.neighbors import BallTree
+
+from minerva_analysis import config_json_path, data_path
+from minerva_analysis.server.models import database_model
+from minerva_analysis.server.utils import pyramid_assemble
 
 ball_tree = None
 database = None
@@ -361,17 +360,13 @@ def get_number_of_cells_in_circle(x, y, datasource_name, r):
 
 
 def get_color_scheme(datasource_name, refresh, label_field='celltype'):
-    color_scheme_path = str(
-        Path(os.path.join(os.getcwd())) / data_path / datasource_name / str(
-            label_field + "_color_scheme.pickle"))
-    if refresh == False:
-        if os.path.isfile(color_scheme_path):
-            print("Color Scheme Exists, Loading")
-            color_scheme = pickle.load(open(color_scheme_path, "rb"))
-            return color_scheme
     if label_field == 'celltype':
         labels = get_phenotypes(datasource_name)
         print(labels)
+    csvPath = config[datasource_name]['featureData'][0]['celltypeData']
+    data = None
+    if os.path.isfile(csvPath):
+        data = pd.read_csv(csvPath)
     labels.append('SelectedCluster')
     color_scheme = {}
     colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#a65628", "#f781bf", "#808080", "#7A4900",
@@ -406,10 +401,20 @@ def get_color_scheme(datasource_name, refresh, label_field='celltype'):
               "#866097", "#365D25", "#252F99", "#00CCFF", "#674E60", "#FC009C", "#92896B"]
     for i in range(len(labels)):
         color_scheme[str(labels[i])] = {}
-        color_scheme[str(labels[i])]['rgb'] = list(ImageColor.getcolor(colors[i], "RGB"))
-        color_scheme[str(labels[i])]['hex'] = colors[i]
+        try:
+            row_index = data.iloc[:, 0].values.tolist().index(labels[i])
+            if row_index != -1:
+                this_color_string = data.iloc[row_index, 2]
+                # Convert color string to RGB list
+                this_color_list = [x for x in eval(this_color_string)]
+                color_scheme[str(labels[i])]['rgb'] = this_color_list
+                # convert list to hex
+                color_scheme[str(labels[i])]['hex'] = '#%02x%02x%02x' % (
+                this_color_list[0], this_color_list[1], this_color_list[2])
+        except:
+            color_scheme[str(labels[i])]['rgb'] = list(ImageColor.getcolor(colors[i], "RGB"))
+            color_scheme[str(labels[i])]['hex'] = colors[i]
 
-    pickle.dump(color_scheme, open(color_scheme_path, 'wb'))
     return color_scheme
 
 
