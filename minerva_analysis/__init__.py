@@ -24,7 +24,7 @@ if getattr(sys, 'frozen', False):
     data_path = Path(os.path.dirname(sys.executable) + '/data')
     multiprocessing.freeze_support()
 else:
-    data_path = Path("scope2screen/data")
+    data_path = Path("minerva_analysis/data")
 
 config_json_path = data_path / "config.json"
 db = SQLAlchemy(app)
